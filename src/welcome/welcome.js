@@ -35,7 +35,8 @@ export function Welcome({ onStart }) {
         {getReady ? (
           <>
             <h1>
-              Now clear your mind and just <br /> choose as quickly as possible
+              Now clear your mind and make <br /> some choices as quickly as
+              possible
             </h1>
             <h1>Ready?...</h1>
             <button onClick={onStartClick}>Let's Go!</button>

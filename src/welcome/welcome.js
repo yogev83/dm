@@ -4,14 +4,19 @@ import "./welcome.css";
 
 export function Welcome({ onStart }) {
   const [state, setState] = React.useState([]);
+  const [getReady, setGetReady] = React.useState(false);
   const [error, setError] = React.useState("");
 
-  const onStartClick = React.useCallback(() => {
+  const onSubmit = React.useCallback(() => {
     if (state[0] && state[1]) {
-      onStart(state);
+      setGetReady(true);
     } else {
       setError("Both options are required!");
     }
+  }, [state]);
+
+  const onStartClick = React.useCallback(() => {
+    onStart(state);
   }, [onStart, state]);
 
   const onChange = (id, e) => {
@@ -27,31 +32,43 @@ export function Welcome({ onStart }) {
   return (
     <div className="welcome">
       <form>
-        <h1>
-          What options do you want <br /> to choose between?
-        </h1>
-        <div className="question">
-          <input
-            type="text"
-            required
-            onChange={(e) => {
-              onChange(0, e);
-            }}
-          />
-          <label>First Option</label>
-        </div>
-        <div className="question">
-          <input
-            type="text"
-            required
-            onChange={(e) => {
-              onChange(1, e);
-            }}
-          />
-          <label>Second Option</label>
-        </div>
-        <button onClick={onStartClick}>Lets Go!</button>
-        <p className="error">{error}</p>
+        {getReady ? (
+          <>
+            <h1>
+              Now clear your mind and just <br /> choose as quickly as possible
+            </h1>
+            <h1>Ready?...</h1>
+            <button onClick={onStartClick}>Let's Go!</button>
+          </>
+        ) : (
+          <>
+            <h1>
+              What options do you want <br /> to choose between?
+            </h1>
+            <div className="question">
+              <input
+                type="text"
+                required
+                onChange={(e) => {
+                  onChange(0, e);
+                }}
+              />
+              <label>First Option</label>
+            </div>
+            <div className="question">
+              <input
+                type="text"
+                required
+                onChange={(e) => {
+                  onChange(1, e);
+                }}
+              />
+              <label>Second Option</label>
+            </div>
+            <button onClick={onSubmit}>Submit</button>
+            <p className="error">{error}</p>
+          </>
+        )}
       </form>
     </div>
   );

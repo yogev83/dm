@@ -13,7 +13,7 @@ export function Stoper({ id, onTimeout }) {
     if (timeLeftClassName === "timeleft") {
       setTimeout(() => {
         setTimeLeftClassName("timeleft shrinking");
-      }, 10);
+      }, 100);
     }
   }, [timeLeftClassName]);
 

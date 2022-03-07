@@ -1,0 +1,43 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+  height: 100%;
+  background-color: #d31818;
+}
+
+.App header {
+  background-color: #fff;
+  padding: 15px 0;
+}
+
+.options {
+  display: inline-flex;
+  justify-content: center;
+  margin: 40px 0;
+}
+
+.options > .option {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  box-shadow: rgb(255 255 255) 6px 2px 16px 0px, rgb(211 24 24 / 80%) -6px -2px 16px 0px;
+  width: 300px;
+  height: 300px;
+  padding: 10px;
+  margin: 10px;
+  cursor: pointer;
+  border-radius: 12px
+}
+
+.options > .option:active {
+  background-color: #ccc;
+  box-shadow: inset rgb(255 255 255) 6px 2px 16px 0px, rgb(211 24 24 / 80%) -6px -2px 16px 0px;
+}
+
+.options > .option > h1 {
+    color: #d31818;
+    font-weight: 100;
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+}

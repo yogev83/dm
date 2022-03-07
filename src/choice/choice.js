@@ -7,10 +7,8 @@ export function Choice({ choice, onRestart }) {
     <div className="choice">
       <form>
         <h1>Well, there you have it!</h1>
-        <div className="yourChoiceWrapper">
-          <h1>Your choice is: </h1>
-          <h1 className="yourChoice">{choice.title}</h1>
-        </div>
+        <h1>Your choice is: </h1>
+        <h1 className="yourChoice">{choice.title}</h1>
         <button onClick={onRestart}>Start Over</button>
       </form>
     </div>

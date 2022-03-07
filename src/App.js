@@ -96,7 +96,7 @@ export default function App() {
       <header>
         <img src={logo} alt="BigCo Inc. logo" />
       </header>
-      {view}
+      <div className="content">{view}</div>
     </div>
   );
 }
